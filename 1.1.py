@@ -1,32 +1,15 @@
-# def searchChildren(classes, parent, child):
-#
-#     if parent == child:
-#         return True
-#
-#     if child in classes[parent]:
-#         return True
-#
-#     for grandparent in classes[parent]:
-#         if searchChildren(classes, grandparent, child):
-#             return True
-#     return False
-
-
-
 def searchChildren(classes, parent, child):
 
     if parent == child:
-        return 0
+        return True
 
-    if len(classes[parent]) == 0:
-        return 0
-
-    if child in classes[parent]: # тут unhashable type: 'list'
-        return 1
+    if child in classes[parent]:
+        return True
 
     for grandparent in classes[parent]:
-        return 1 * searchChildren(classes, grandparent, child)
-    return 1
+        if searchChildren(classes, grandparent, child):
+            return True
+    return False
 
 
 lst = []
