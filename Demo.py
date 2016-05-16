@@ -1,0 +1,1 @@
+print('hello' if 3 > 2 else 'bye')
